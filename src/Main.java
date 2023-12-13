@@ -12,11 +12,11 @@ public class Main {
         Kütüphane library = new Kütüphane();
 
         // Create some books
-        Kitap book1 = new Kitap("Book1","Den",Kategori.BİLGİ,79,true);
-        Kitap book2 = new Kitap("Book2","Deniz", Kategori.YAŞAM,63,false);
-        Kitap book3 = new Kitap("Book3","Denizhan", Kategori.YAŞAM,29,true);
-        Kitap book4 = new Kitap("Book4","Den", Kategori.BİLGİ,24,true);
-        Kitap book5 = new Kitap("Book5","Denizhan",Kategori.ÇOCUK,59,true);
+        Kitap book1 = new Kitap("Book1","Den",Kategori.BİLGİ,79,1,true);
+        Kitap book2 = new Kitap("Book2","Deniz", Kategori.YAŞAM,63,2,true);
+        Kitap book3 = new Kitap("Book3","Denizhan", Kategori.YAŞAM,29,3,true);
+        Kitap book4 = new Kitap("Book4","Den", Kategori.BİLGİ,24,4,true);
+        Kitap book5 = new Kitap("Book5","Denizhan",Kategori.ÇOCUK,59,5,true);
 
 
 
@@ -36,13 +36,14 @@ public class Main {
 
         System.out.println(library);
 
-        library.kitapSil(3);
+       // library.kitapSil(3);
 
 
         Kullanıcı user1 = new Kullanıcı("John", "Doe", "john@example.com", "123 Main St", 3);
         Kullanıcı user2 = new Kullanıcı("Mary", "Jane", "mary@example.com", "912 Rear St", 2);
         Kullanıcı user3 = new Kullanıcı("Louis", "Pedro", "louis@example.com", "724 Front St", 6);
         Kullanıcı user4 = new Kullanıcı("Wesley", "Sneijder", "wesley@example.com", "943 Left St", 8);
+
 
         user1.setBakiye(100);
         user2.setBakiye(20);
@@ -68,12 +69,14 @@ public class Main {
 
         System.out.println("-------------Aynı Yazarın Kitapları----------");
         library.yazarKitaplariListele("Den");
+        library.yazarKitaplariListele("Denizhan");
+
         System.out.println("----------------------------------------------");
         System.out.println("-------------Aynı Kategoride Olan Kitaplar----------");
         library.kategoriKitaplariListele(Kategori.BİLGİ);
         library.kategoriKitaplariListele(YAŞAM);
         System.out.println("----------------------------------------------");
-        System.out.println("----------------Kitap Öde------------");
+        System.out.println("----------------Ödünç Alınan Kitaplar------------");
         library.kitapOde(user1,book5);
         library.kitapOde(user2,book3);
         library.kitapOde(user4,book4);
@@ -101,16 +104,13 @@ public class Main {
         System.out.println("------------------------------------------------------");
 
 
-        Yayın yayin1 = new Kitap("Book1", "Den", Kategori.BİLGİ, 79, true);
 
-        System.out.println("---------------- Kitap/Dergi Bilgileri ---------------");
-        System.out.println(yayin1);
-        System.out.println("------------------------------------------------------");
 
         System.out.println(library);
 
+        //System.out.println(user1.getIsim());
 
-        user1.getAd();
+
 
     }
 }

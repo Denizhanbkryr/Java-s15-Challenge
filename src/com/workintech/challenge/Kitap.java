@@ -2,7 +2,7 @@ package com.workintech.challenge;
 import java.util.Date;
 
 
-public class Kitap extends Yayın{
+public class Kitap implements Yayın {
     private String isim;
     private String yazar;
     private Kategori kategori;
@@ -10,15 +10,26 @@ public class Kitap extends Yayın{
 
     private int id;
 
+    private boolean durum;
+
     public int getId() {
         return id;
+    }
+
+    public Kitap(String isim, String yazar, Kategori kategori, int fiyat, int id, boolean durum) {
+        this.isim = isim;
+        this.yazar = yazar;
+        this.kategori = kategori;
+        this.fiyat = fiyat;
+        this.id = id;
+        this.durum = durum;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    private boolean durum;
+
 
     @Override
     public String toString() {
@@ -32,25 +43,18 @@ public class Kitap extends Yayın{
                 '}';
     }
 
-    public Kitap(String isim, String yazar, Kategori kategori, int fiyat, boolean durum) {
-        super("", new Date());
-        this.isim = isim;
-        this.yazar = yazar;
-        this.kategori = kategori;
-        this.fiyat = fiyat;
-        this.durum = durum;
+
+
+    public String getIsim() {
+        return this.isim;
     }
 
-    public String getİsim() {
-        return isim;
-    }
-
-    public void setİsim(String isim) {
+    public void setIsim(String isim) {
         this.isim = isim;
     }
 
     public String getYazar() {
-        return yazar;
+        return this.yazar;
     }
 
     public void setYazar(String yazar) {

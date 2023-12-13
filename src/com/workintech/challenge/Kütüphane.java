@@ -27,7 +27,7 @@ public class Kütüphane extends AbstractUser {
 
     public Kitap kitapSec(int id, String isim, String yazar) {
         for (Kitap kitap : kitaplarMap.values()) {
-            if (kitap.getId() == id || kitap.getİsim().equals(isim) || kitap.getYazar().equals(yazar)) {
+            if (kitap.getId() == id || kitap.getIsim().equals(isim) || kitap.getYazar().equals(yazar)) {
                 return kitap;
             }
         }
@@ -52,9 +52,11 @@ public class Kütüphane extends AbstractUser {
                 kitaplar.add(kitap);
             }
         }
+
         System.out.println(kitaplar);
         return kitaplar;
     }
+
 
 
     public List<Kitap> yazarKitaplariListele(String yazar) {
